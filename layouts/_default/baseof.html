@@ -8,6 +8,12 @@
     <title>{{ block "title" . }}{{ end }}{{ .Site.Title }}</title>
     {{ block "meta" . }}{{ end }}
     <link href="{{ .Site.BaseURL }}css/styles.css" rel="stylesheet">
+
+    {{ if .Site.Params.Favicon }}
+    <link rel="shortcut icon" href="{{ .Site.Params.Favicon }}" type="image/vnd.microsoft.icon">
+    <link rel="icon" href="{{ .Site.Params.Favicon }}" type="image/vnd.microsoft.icon">
+    {{ end }}
+
     {{ range .Site.Params.custom_css }}
         <link rel="stylesheet" href="{{ $.Site.BaseURL }}{{ . }}">
     {{ end }}
