@@ -12,7 +12,9 @@
 
     <ul class="p-articles">
       {{ range (.Paginate .Data.Pages).Pages }}
+      {{ if not (.Param "isStatic") }}
       <li>{{ .Render "li" }}</li>
+      {{ end }}
       {{ end }}
     </ul>
 

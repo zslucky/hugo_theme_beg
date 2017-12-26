@@ -7,7 +7,9 @@
     </div>
     <div class="list-group">
       {{ range first 10 .Site.Pages }}
+      {{ if not (.Param "isStatic") }}
       <a href="{{ .Permalink }}" class="list-group-item">{{ .Title }}</a>
+      {{ end }}
       {{ end }}
     </div>
   </section>
