@@ -65,7 +65,7 @@
                 </ul>
               </li>
               {{ else }}
-              <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+              <li><a href="{{ .URL }}">{{ .Pre }} {{ .Name }}</a></li>
               {{ end }}
               {{ end }}
             </ul>
@@ -92,13 +92,6 @@
           <span class="h-logo">&copy; {{ .Site.Title }}</span>
         {{ end }}
         </p>
-        <p class="foot-social">
-          {{ if .Site.Params.Github }}
-          <a href="https://github.com/{{ .Site.Params.Github }}">
-            <i class="fa fa-github" aria-hidden="true"></i>
-          </a>
-          {{ end }}
-        </p>
       </div>
     </footer>
 
@@ -106,6 +99,11 @@
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
+    <script type="text/javascript">
+      $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+      })
+    </script>
   </body>
 </html>
 

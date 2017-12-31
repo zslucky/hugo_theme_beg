@@ -1,15 +1,54 @@
 
 <aside class="l-sidebar">
 
-  <section class="panel panel-default">
+  <section class="panel panel-default social-bar">
     <div class="panel-heading">
-      <div class="panel-title">LATESTS</div>
+      <div class="panel-title">Social Link</div>
     </div>
-    <div class="list-group">
-      {{ range first 10 .Site.Pages }}
-      {{ if not (.Param "isStatic") }}
-      <a href="{{ .Permalink }}" class="list-group-item">{{ .Title }}</a>
+    <div class="panel-body">
+      {{ if .Site.Params.Wechat }}
+      <a
+        href="javscript:void(0)"
+        data-toggle="tooltip"
+        data-placement="top"
+        title="{{ .Site.Params.Wechat }}"
+      >
+        <i class="fa fa-wechat" aria-hidden="true"></i>
+      </a>
+      &nbsp;
       {{ end }}
+      {{ if .Site.Params.Github }}
+      <a
+        href="https://github.com/{{ .Site.Params.Github }}"
+        data-toggle="tooltip"
+        data-placement="top"
+        title="{{ .Site.Params.Github }}"
+      >
+        <i class="fa fa-github" aria-hidden="true"></i>
+      </a>
+      &nbsp;
+      {{ end }}
+      {{ if .Site.Params.Qq }}
+      <a
+        href="javscript:void(0)"
+        data-toggle="tooltip"
+        data-placement="top"
+        title="{{ .Site.Params.Qq }}"
+      >
+        <i class="fa fa-qq" aria-hidden="true"></i>
+      </a>
+      &nbsp;
+      {{ end }}
+      {{ if .Site.Params.Facebook }}
+      <a
+        href="https://www.facebook.com/{{ .Site.Params.Facebook }}"
+        data-toggle="tooltip"
+        data-placement="top"
+        title="{{ .Site.Params.Facebook }}"
+      >
+        <i class="fa fa-facebook-square" aria-hidden="true"></i>
+      </a>
+      &nbsp;
       {{ end }}
     </div>
   </section>
@@ -26,6 +65,19 @@
     </div>
   </section>
   {{ end }}
+
+  <section class="panel panel-default">
+    <div class="panel-heading">
+      <div class="panel-title">LATESTS</div>
+    </div>
+    <div class="list-group">
+      {{ range first 10 .Site.Pages }}
+      {{ if not (.Param "isStatic") }}
+      <a href="{{ .Permalink }}" class="list-group-item">{{ .Title }}</a>
+      {{ end }}
+      {{ end }}
+    </div>
+  </section>
 
 </aside>
 
