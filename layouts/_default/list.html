@@ -6,7 +6,15 @@
 
     {{ if not .IsHome }}
     <header class="page-header">
-      <h1>{{ .Title }}</h1>
+      <h1>
+        {{ .Title }}
+        <small class="page-header__rss">
+          <a href="index.xml">
+            <i class="fa fa-rss-square"></i>&nbsp;
+            Subscribe {{.Title}} RSS
+          </a>
+        </small>
+      </h1>
     </header>
     {{ end }}
 

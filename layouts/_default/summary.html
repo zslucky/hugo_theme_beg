@@ -34,7 +34,7 @@
         {{ end }}
         <span class="title">{{ $key }}: </span>
         {{ range (index $params $key) }}
-        <a href="{{ $.Site.BaseURL }}{{ $key | urlize }}/{{ . | urlize }}/">{{ . }}</a>
+        <a href="{{ $.Site.BaseURL }}{{ $key | urlize }}/{{ . | urlize }}/">{{ . }}</a>&nbsp;
         {{ end }}
       </li>
       {{ end }}

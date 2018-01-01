@@ -28,6 +28,17 @@
       </a>
       &nbsp;
       {{ end }}
+      {{ if .Site.Params.Google }}
+      <a
+        href="javscript:void(0)"
+        data-toggle="tooltip"
+        data-placement="top"
+        title="{{ .Site.Params.Google }}"
+      >
+        <i class="fa fa-google" aria-hidden="true"></i>
+      </a>
+      &nbsp;
+      {{ end }}
       {{ if .Site.Params.Qq }}
       <a
         href="javscript:void(0)"
