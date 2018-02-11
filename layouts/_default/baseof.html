@@ -21,10 +21,6 @@
   </head>
 
   <body>
-    {{ if ne (getenv "HUGO_ENV") "DEV" }}
-    {{ template "_internal/google_analytics.html" . }}
-    {{ end }}
-
     <header class="l-header">
       <nav class="navbar navbar-default">
         <div class="container">
@@ -111,6 +107,18 @@
         $('[data-toggle="tooltip"]').tooltip()
       })
     </script>
+    {{ if ne (getenv "HUGO_ENV") "DEV" }}
+    <script>
+      // For baidu
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?2c870008ce1c7a499f87188e37805c3a";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+    {{ end }}
   </body>
 </html>
 
